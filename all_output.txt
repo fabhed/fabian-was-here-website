@@ -1,0 +1,62 @@
+I will create a simple static website using Python and the Flask web framework. The website will display "Fabian was here" on the home page and listen on port 80.
+
+First, let's create the necessary files and folders for the project:
+
+1. main.py: The entry point of the application.
+2. templates/: A folder to store the HTML templates.
+3. templates/index.html: The HTML template for the home page.
+4. requirements.txt: The file containing the required packages for the project.
+
+Now, let's write the code for each file:
+
+main.py
+```python
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
+```
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Static Website</title>
+</head>
+<body>
+    <h1>Fabian was here</h1>
+</body>
+</html>
+```
+
+requirements.txt
+```
+Flask==2.1.1
+```
+
+Now, follow these steps to run the project:
+
+1. Install the required packages using the following command:
+
+```
+pip install -r requirements.txt
+```
+
+2. Run the main.py file:
+
+```
+python main.py
+```
+
+3. Open a web browser and visit http://localhost or http://127.0.0.1 to see the "Fabian was here" message on the home page.
+
+Please note that running a web server on port 80 might require administrator privileges. If you encounter any issues, try running the command with administrator privileges or change the port number to a higher value (e.g., 8080).
